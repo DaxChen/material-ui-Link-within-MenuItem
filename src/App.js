@@ -4,7 +4,6 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import RaisedButton from 'material-ui/RaisedButton'
-import './App.css'
 
 class App extends Component {
 
@@ -37,12 +36,15 @@ class App extends Component {
           <MenuItem primaryText="about" containerElement={<Link to="/about" />} />
         </Drawer>
 
-        {this.props.children}
+        <div style={{ textAlign: 'center' }}>
+          {this.props.children}
 
-        <RaisedButton
-          label="Toggle Drawer"
-          onTouchTap={this.toggleDrawer}
-        />
+          <RaisedButton
+            label="Toggle Drawer"
+            onTouchTap={this.toggleDrawer}
+          />
+        </div>
+
       </div>
     )
   }
