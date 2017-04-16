@@ -32,8 +32,24 @@ class App extends Component {
           open={this.state.open}
         >
           <AppBar title="Title" onLeftIconButtonTouchTap={this.toggleDrawer} />
-          <MenuItem primaryText="home" containerElement={<Link to="/" />} />
-          <MenuItem primaryText="about" containerElement={<Link to="/about" />} />
+          <MenuItem
+            primaryText="home"
+            containerElement={<Link to="/" />}
+            onTouchTap={() => {
+              console.log('going home')
+              alert('going home!')
+              this.toggleDrawer()
+            }}
+          />
+          <MenuItem
+            primaryText="about"
+            containerElement={<Link to="/about" />}
+            onTouchTap={() => {
+              console.log('about')
+              alert('going to about page!')
+              this.toggleDrawer()
+            }}
+          />
         </Drawer>
 
         <div style={{ textAlign: 'center' }}>
